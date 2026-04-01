@@ -18,18 +18,3 @@ body {
   background-size: cover;
   background-position: center;
 }
-
-input,
-textarea,
-select {
-  color: #e5e2e1;
-  background-color: transparent;
-}
-
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus {
-  -webkit-text-fill-color: #e5e2e1;
-  -webkit-box-shadow: 0 0 0px 1000px #131313 inset;
-  transition: background-color 9999s ease-out;
-}
