@@ -12,14 +12,30 @@ export const App = () => {
   const isEmailValid = /.+@.+\..+/.test(data.email);
   const isCityValid = data.city.length > 0;
 
+  const canContinue =
+    (step === 1 && isNameValid) ||
+    (step === 2 && isEmailValid) ||
+    (step === 3 && isCityValid) ||
+    step === 4;
+
+  const handleNext = () => {
+    if (canContinue) {
+      next();
+    }
+  };
+
   return (
-    <FormLayout step={step}>
+    <FormLayout
+      step={step}
+      onBack={prev}
+      onNext={handleNext}
+      showBack={step > 1}
+      nextLabel={step === 4 ? 'Finish' : 'Next'}
+    >
       {step === 1 && (
         <StepOne
           fullName={data.fullName}
           onChange={(value) => setField('fullName', value)}
-          onNext={next}
-          canNext={isNameValid}
         />
       )}
 
@@ -28,9 +44,6 @@ export const App = () => {
           fullName={data.fullName}
           email={data.email}
           onChange={(value) => setField('email', value)}
-          onBack={prev}
-          onNext={next}
-          canNext={isEmailValid}
         />
       )}
 
@@ -39,9 +52,6 @@ export const App = () => {
           fullName={data.fullName}
           city={data.city}
           onPickCity={(city) => setField('city', city)}
-          onBack={prev}
-          onNext={next}
-          canNext={isCityValid}
         />
       )}
 

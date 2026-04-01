@@ -9,7 +9,7 @@ export const TextInput = ({ label, ...props }: Props) => (
     <span className="text-xs uppercase tracking-[0.2em] text-outline">{label}</span>
     <input
       {...props}
-      className="w-full border-0 border-b border-slate-600 bg-transparent px-0 py-4 text-2xl text-onBackground outline-none transition placeholder:text-slate-500 focus:border-primary"
+      className="border-0 border-b border-slate-600 bg-transparent px-0 py-4 text-2xl outline-none transition focus:border-primary"
     />
   </label>
 );

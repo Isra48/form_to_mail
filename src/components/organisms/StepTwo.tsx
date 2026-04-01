@@ -4,12 +4,9 @@ type Props = {
   fullName: string;
   email: string;
   onChange: (value: string) => void;
-  onNext: () => void;
-  onBack: () => void;
-  canNext: boolean;
 };
 
-export const StepTwo = ({ fullName, email, onChange, onNext, onBack, canNext }: Props) => (
+export const StepTwo = ({ fullName, email, onChange }: Props) => (
   <section>
     <h2 className="font-headline text-4xl font-light md:text-5xl">
       <span className="text-primary italic">{fullName || '[Nombre]'}</span>, es un placer.
@@ -25,19 +22,6 @@ export const StepTwo = ({ fullName, email, onChange, onNext, onBack, canNext }: 
         value={email}
         onChange={(e) => onChange(e.target.value)}
       />
-    </div>
-
-    <div className="mt-8 flex flex-wrap gap-3">
-      <button onClick={onBack} className="rounded-full border border-slate-500 px-6 py-3 text-xs uppercase tracking-wider text-slate-300">
-        Regresar
-      </button>
-      <button
-        onClick={onNext}
-        disabled={!canNext}
-        className="rounded-full border border-primary px-6 py-3 text-xs font-semibold uppercase tracking-wider text-primary transition hover:bg-primary hover:text-black disabled:cursor-not-allowed disabled:opacity-40"
-      >
-        Continuar
-      </button>
     </div>
   </section>
 );
