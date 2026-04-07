@@ -10,7 +10,6 @@ export const DesktopNav = ({ onBack, onNext, showBack = true, nextLabel = 'Next'
     <button className="rounded border border-slate-700 px-4 py-2 opacity-70" disabled={!showBack} onClick={onBack}>
       Back
     </button>
-    <button className="rounded border border-slate-700 px-4 py-2 opacity-40">Skip</button>
     <button className="rounded bg-primary px-5 py-2 font-semibold text-black" onClick={onNext}>
       {nextLabel}
     </button>
