@@ -18,3 +18,10 @@ body {
   background-size: cover;
   background-position: center;
 }
+
+@media (min-width: 768px) {
+  .bg-luxury-texture {
+    background-size: 125%;
+    background-position: center top;
+  }
+}
