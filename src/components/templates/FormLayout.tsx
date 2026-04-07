@@ -23,7 +23,7 @@ export const FormLayout = ({
 }: Props) => (
   <div className="min-h-screen pb-24">
     <BrandHeader />
-    <main className="mx-auto w-full max-w-5xl px-6 pb-24 pt-4 md:px-10">
+    <main className="mx-auto w-full max-w-7xl px-6 pb-24 pt-4 md:px-12 lg:px-16">
       <StepIndicator current={step} total={4} />
       {children}
       <DesktopNav onBack={onBack} onNext={onNext} showBack={showBack} nextLabel={nextLabel} />
